@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 import os
 from dotenv import load_dotenv
 
@@ -9,7 +9,6 @@ load_dotenv()
 
 app = FastAPI()
 
-# Permitir llamadas desde Netlify
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
